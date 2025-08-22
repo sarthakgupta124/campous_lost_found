@@ -1,5 +1,4 @@
 "use server"
-import React from 'react'
 import otpModel from '@/models/otp'
 import UserModel from '@/models/user' 
 import bcrypt from 'bcryptjs';

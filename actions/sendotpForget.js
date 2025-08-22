@@ -2,7 +2,7 @@
 "use server"
 import connection from '@/config/db';
 import UserModel from '@/models/user';
-import React from 'react'
+
 import nodemailer from "nodemailer";
 import otpModel from '@/models/otp';
 import bcrypt from 'bcryptjs';

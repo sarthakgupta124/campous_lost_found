@@ -1,10 +1,8 @@
 "use server"
 import connection from '@/config/db';
-import React from 'react'
 import nodemailer from "nodemailer";
 import otpModel from '@/models/otp';
 import bcrypt from 'bcryptjs';
-
 const sendotpregister = async (email_id) => {
     await connection;
     let otp = Math.floor(100000 + Math.random() * 900000).toString();

@@ -5,6 +5,7 @@ import UserModel from "@/models/user";
 import connection from "@/config/db";
 import bcrypt from "bcryptjs";
 
+
 const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
@@ -50,7 +51,6 @@ const authOptions = {
     signIn: "/auth/login" 
   }
 };
-
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

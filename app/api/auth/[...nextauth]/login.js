@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { signIn } from 'next-auth/react'
+export const runtime='nodejs';
 
 const login = async (form) => {
     const res = await signIn("credentials", {

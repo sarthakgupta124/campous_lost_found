@@ -1,6 +1,5 @@
 
 "use server"
-import React from 'react'
 import UserModel from "@/models/user";
 import connection from "@/config/db";
 import bcrypt from "bcryptjs";
