@@ -33,12 +33,12 @@ const Body = () => {
       <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-50 to-white text-center px-4">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
           Never Lose Hope.<br />
-          Always Find What's Lost.
+          Always Find Whats Lost.
         </h1>
 
 
         <p className="text-gray-500 max-w-2xl mb-8">
-          Connect with your college community to report lost items and help others find what they've lost.
+          Connect with your college community to report lost items and help others find what they ve lost.
           Simple, fast, and designed for students by students.
         </p>
 

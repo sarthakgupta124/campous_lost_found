@@ -45,7 +45,7 @@ const About = () => {
                 <p className="text-gray-600 mt-2">
                   A passionate developer dedicated to creating meaningful solutions that help communities.
                   With expertise in modern web technologies, I built this Lost &amp; Found platform to address a
-                  real-world problem and make a positive impact on people's lives.
+                  real-world problem and make a positive impact on society.
                 </p>
 
                 
@@ -90,7 +90,7 @@ const About = () => {
           
           <p className="text-gray-700 mb-8">
             The Lost &amp; Found website is a comprehensive platform designed to help people reconnect
-            with their lost belongings. Whether it's a wallet, keys, phone, or any other valuable item,
+            with their lost belongings. Whether its a wallet, keys, phone, or any other valuable item,
             our platform provides a centralized place where finders and seekers can connect.
           </p>
 
