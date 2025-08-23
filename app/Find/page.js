@@ -18,7 +18,7 @@ export default function Find() {
     "Electronics",
     "Jewelry",
     "Keys",
-    "Personal Items",
+    "Personal Item",
   ];
   useEffect(() => {
     if (status === 'unauthenticated') {
