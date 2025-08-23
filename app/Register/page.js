@@ -11,10 +11,12 @@ import { toast } from 'react-toastify'
 const Register = () => {
   const [otp, setOtp] = useState("");
   const [otpSent, setOtpSent] = useState(false);
+  const [buttonregister, setbuttonregister] = useState(false)
 
   const router = useRouter();
   const [form, setform] = useState({ name: "", contact: "", email: "", password: "" });
   const handleSubmit = async (e) => {
+    setbuttonregister(true);
     e.preventDefault();
     if ( await registereOtpauth(otp, form.email)) {
       try {
@@ -34,6 +36,7 @@ const Register = () => {
       }
     }
     else toast.error("Enter Valid OTP");
+    setbuttonregister(false);
 
   }
   const handleChange = (e) => {
@@ -170,8 +173,9 @@ const Register = () => {
               By creating an account, you agree to our Terms of Service and Privacy Policy. Your information will only be used to facilitate lost and found connections within the campus community.
             </p>
             <button
+              disabled={buttonregister}
               type="submit"
-              className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900 transition"
+              className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
               Create Account
             </button>

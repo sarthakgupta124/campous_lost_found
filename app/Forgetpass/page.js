@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
 export default function ForgotPassword() {
+  const [buttonforget, setbuttonforget] = useState(false)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [otp, setOtp] = useState("");
@@ -41,6 +42,7 @@ export default function ForgotPassword() {
   };
 
   const handleSave = async (e) => {
+    setbuttonforget(true)
     e.preventDefault();
     const result = await otpauth(otp, password, email);
     if (!result) toast.error("Enter Valid OTP!")
@@ -49,6 +51,7 @@ export default function ForgotPassword() {
       toast.success("Password reset successfully!")
       router.push("/Login")
     }
+    setbuttonforget(false)
   };
 
   return (
@@ -116,7 +119,8 @@ export default function ForgotPassword() {
           </button>
           <button
             type="submit"
-            className="w-full py-3 bg-black text-white rounded-lg hover:bg-gray-900"
+            disabled={buttonforget}
+            className="w-full py-3 bg-black text-white rounded-lg hover:bg-gray-900 disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
             Save
           </button>

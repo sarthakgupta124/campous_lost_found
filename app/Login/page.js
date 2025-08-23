@@ -8,20 +8,24 @@ import { toast } from 'react-toastify'
 
 const Login = () => {
   const router = useRouter();
+  const [buttonlogin, setbuttonlogin] = useState(false)
   const [form, setform] = useState({ email: "", password: "" })
   const handlechange = (e) => {
     setform({ ...form, [e.target.name]: e.target.value })
   }
   const handlesubmit = async (e) => {
+    setbuttonlogin(true);
     e.preventDefault();
     const result = await login(form);
     if (result.error) {
       toast.error("Invalid email or password")
+      setbuttonlogin(false);
     }
     else {
       toast.success("login Successful")
       setform({ email: "", password: "" });
-      router.push('/')
+      setbuttonlogin(false);
+      router.push('/');
     }
   }
   return (
@@ -75,7 +79,8 @@ const Login = () => {
 
             <button
               type="submit"
-              className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900 transition"
+              disabled={buttonlogin}
+              className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-900 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
               Sign In
             </button>
